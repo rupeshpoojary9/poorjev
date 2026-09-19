@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "poorjev"
+version = "0.1.0.dev0"
+description = "The poor man's Jev: a local-first System One decision layer with provably calibrated confidence."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Rupesh Poojary" }]
+keywords = ["llm", "classification", "calibration", "system-one", "structured-output", "conformal-prediction"]
+dependencies = []
+
+[project.optional-dependencies]
+local = ["transformers>=4.40", "torch>=2.2"]
+llm = ["anthropic>=0.40", "openai>=1.40"]
+plots = ["matplotlib>=3.8", "numpy>=1.26"]
+dev = ["pytest>=8.0", "pytest-cov>=5.0"]
+
+[project.scripts]
+poorjev = "poorjev.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/rupeshpoojary9/poorjev"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/poorjev"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
