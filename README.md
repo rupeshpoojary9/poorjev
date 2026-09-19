@@ -40,9 +40,19 @@ Early build. Shipped so far:
   from your declared set, proven against adversarial inputs (NaN, inf,
   negatives, all-zero) in the test suite. This is Jev's "0 type errors" claim,
   made honest.
+- **M2, the local backend.** `Client().ask(state, {...})` runs every question in
+  one batched pass through a keyless NLI model (`pip install 'poorjev[local]'`,
+  one ~400MB download, then offline). See `examples/ticket_router.py` and
+  `examples/tool_gate.py`.
 
-Next: M2 local NLI backend (no key), M3 eval set + metrics, M4 calibration and
-the reliability diagram, M5 optional LLM backend. See `PRD.md`.
+**Practical note on phrasing.** The local model is strong at concrete entailment
+("this moves money", "this deletes data", "the customer wants to cancel") and
+weak at abstract value judgements ("this is dangerous", "this is important").
+Ask concrete questions and let a rule apply the policy. For harder reasoning,
+the optional `[llm]` backend (M5) is the intelligence dial.
+
+Next: M3 eval set + metrics, M4 calibration and the reliability diagram, M5
+optional LLM backend. See `PRD.md`.
 
 ## What this is not
 
