@@ -18,13 +18,20 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class DecisionRecord:
-    """One decision the model made, scored against gold."""
+    """One decision the model made, scored against gold.
+
+    ``dist`` and ``gold_index`` are optional and only used by calibration (M4):
+    the full probability distribution over the decision space and the index of
+    the gold class within it. Metrics ignore them.
+    """
     confidence: float     # model's confidence in the value it picked, in [0, 1]
     correct: bool         # was the picked value the gold value
     prob_gold: float      # probability mass placed on the gold value, in [0, 1]
     n_classes: int        # size of the decision space (2 for Noul)
     task: str = ""
     question: str = ""
+    dist: tuple = ()      # full distribution over classes, in class order
+    gold_index: int = -1  # index of the gold class within dist
 
 
 def accuracy(records: list[DecisionRecord]) -> float:

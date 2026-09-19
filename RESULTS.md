@@ -30,11 +30,45 @@ not trustworthy as-is.
 
 ## Calibrated (temperature scaling + conformal abstention)
 
-Lands in M4. This section will show:
+Reproduce with:
 
-- ECE **before -> after** (target: a clear drop from 0.170 toward < 0.05),
-- the reliability diagram, raw vs calibrated (the "after" hugging the diagonal),
-- the risk-coverage curve: accuracy rising as the model abstains on its least
-  confident decisions.
+```bash
+poorjev calibrate --set evalset/tasks.jsonl --plots
+```
 
-Numbers go here only once `poorjev eval` and `poorjev calibrate` produce them.
+Temperature is fit by 5-fold cross-validation: on each fold T is fit on the
+other four and the calibrated ECE is measured on the held-out fold, so the
+"after" number is never graded on data it was fit on.
+
+| Metric | Raw | Calibrated | |
+|---|---:|---:|---|
+| Accuracy | 0.781 | 0.781 | unchanged (temperature is monotonic) |
+| **ECE** | **0.170** | **0.071** | **58% lower calibration error** |
+| Temperature (mean) | 1.00 | 2.71 | > 1: the model was overconfident, softened |
+
+![reliability before and after](docs/reliability_before_after.png)
+
+Left: raw confidences scatter around the diagonal, mostly below it
+(overconfident). Right: after temperature scaling the bars hug the diagonal,
+predicted confidence now tracks real accuracy.
+
+### Selective prediction
+
+Set a risk budget and abstain below the matching confidence threshold:
+
+| Target risk | Coverage | Threshold |
+|---|---:|---:|
+| <= 0.10 | 0.55 | 0.830 |
+
+At a 10% error budget the model confidently answers 55% of decisions and
+abstains on the rest (the honest "I don't know, escalate" signal). Full curve:
+
+![risk coverage](docs/risk_coverage.png)
+
+### Honest notes
+
+- The after-ECE is 0.071, not below 0.05. That is the real cross-validated
+  number on a small set; we report it as measured rather than tuning to a
+  target. A per-task or per-question temperature (instead of one global scalar)
+  would likely push it lower, and is a natural next step.
+- Same eval set caveats as above: small, single-labeller, support flavoured.

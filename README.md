@@ -28,8 +28,15 @@ waitlist. poorjev gives you the same typed-question interface locally, and it is
 the one that proves its confidence is real.
 
 Everyone ships an LLM in JSON mode and calls the `0.9` a "confidence." It is a
-vibe. poorjev is the only one built to prove its `0.9` actually means `0.9`
-(reliability diagram and ECE before/after, landing in M4).
+vibe. poorjev proves its `0.9` actually means `0.9`: on the shipped eval set,
+temperature scaling cuts calibration error (ECE) from 0.170 to 0.071 with no
+loss of accuracy, measured 5-fold held-out.
+
+![confidence you can trust](docs/reliability_before_after.png)
+
+Left: raw confidences are overconfident. Right: calibrated, the bars hug the
+diagonal, so a stated 0.8 really is right about 80% of the time. Full numbers in
+`RESULTS.md`.
 
 ## Status
 
@@ -44,6 +51,12 @@ Early build. Shipped so far:
   one batched pass through a keyless NLI model (`pip install 'poorjev[local]'`,
   one ~400MB download, then offline). See `examples/ticket_router.py` and
   `examples/tool_gate.py`.
+- **M3, the eval set + metrics.** 55 hand-labelled items / 160 decisions, and
+  `poorjev eval` reporting accuracy, ECE, Brier, and risk-coverage.
+- **M4, calibration (the point of the project).** `poorjev calibrate` fits
+  temperature scaling and a conformal abstention threshold, cutting ECE
+  0.170 -> 0.071 (5-fold held-out) and giving honest "I don't know" behaviour.
+  `Client(temperature=T)` then returns calibrated confidence from `ask()`.
 
 **Practical note on phrasing.** The local model is strong at concrete entailment
 ("this moves money", "this deletes data", "the customer wants to cancel") and
@@ -51,8 +64,7 @@ weak at abstract value judgements ("this is dangerous", "this is important").
 Ask concrete questions and let a rule apply the policy. For harder reasoning,
 the optional `[llm]` backend (M5) is the intelligence dial.
 
-Next: M3 eval set + metrics, M4 calibration and the reliability diagram, M5
-optional LLM backend. See `PRD.md`.
+Next: M5 optional LLM backend (the intelligence dial), M6 ship. See `PRD.md`.
 
 ## What this is not
 

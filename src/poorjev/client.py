@@ -25,9 +25,13 @@ class Backend(Protocol):
 
 class Client:
     def __init__(self, backend: Backend | None = None,
-                 hypothesis_template: str = DEFAULT_TEMPLATE):
+                 hypothesis_template: str = DEFAULT_TEMPLATE,
+                 temperature: float = 1.0):
         self._backend = backend
         self.hypothesis_template = hypothesis_template
+        # A fitted temperature (from `poorjev calibrate`) makes ask()'s
+        # confidences calibrated. 1.0 is a no-op (raw).
+        self.temperature = temperature
 
     @property
     def backend(self) -> Backend:
@@ -75,8 +79,18 @@ class Client:
         for name, prim, start, count, mode in plan:
             seg = probs[start:start + count]
             if mode == "noul":
-                out[name] = prim.decide(seg[0], kind="prob")
+                p_true = seg[0]
+                if self.temperature != 1.0:
+                    from .calibration import apply_temperature
+                    p_true = apply_temperature([1.0 - p_true, p_true], self.temperature)[1]
+                out[name] = prim.decide(p_true, kind="prob")
             else:
                 # entailment probs per option/level, normalised across the set
-                out[name] = prim.decide(seg, kind="probs")
+                dist = seg
+                if self.temperature != 1.0:
+                    from .calibration import apply_temperature
+                    total = sum(max(0.0, s) for s in seg) or 1.0
+                    norm = [max(0.0, s) / total for s in seg]
+                    dist = apply_temperature(norm, self.temperature)
+                out[name] = prim.decide(dist, kind="probs")
         return out
