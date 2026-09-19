@@ -5,7 +5,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT license">
   <img src="https://img.shields.io/badge/python-3.10%2B-blue" alt="Python 3.10+">
-  <img src="https://img.shields.io/badge/tests-55%20passing-brightgreen" alt="55 tests passing">
+  <a href="https://github.com/rupeshpoojary9/poorjev/actions/workflows/tests.yml"><img src="https://github.com/rupeshpoojary9/poorjev/actions/workflows/tests.yml/badge.svg" alt="tests"></a>
   <img src="https://img.shields.io/badge/ECE-0.170%20%E2%86%92%200.071-orange" alt="ECE 0.170 to 0.071">
   <img src="https://img.shields.io/badge/API%20key-not%20required-blueviolet" alt="no API key required">
 </p>
