@@ -193,6 +193,10 @@ No hype. Here is what this is not.
 
 **Is this a Jev clone?** No. It reproduces Jev's developer interface and its calibrated-confidence guarantee on open, local models. It does not copy Jev's architecture or its speed.
 
+**Can I run Jev locally?** Not Jev itself, it is closed and hosted. poorjev is the local, open-source alternative: it runs the same typed-decision interface on your own machine, offline, with no API key and no waitlist.
+
+**Is there an open-source alternative to Jev?** Yes, this is one. poorjev is MIT-licensed, reproduces Jev's `Choice`/`Score`/`Noul` interface on commodity models, and proves its calibration with reproducible numbers.
+
 **Do I need an API key or GPU?** No. The default backend runs on CPU, offline, after one model download.
 
 **How is this different from an LLM in JSON mode?** Two ways. Output is schema-valid by construction, not by parsing. And the confidence is calibrated and proven, not a number the model made up.
