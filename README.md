@@ -3,6 +3,7 @@
 <p align="center"><b>The poor man's Jev.</b> An open source, local-first "System One" decision layer for LLM apps: typed decisions with <b>provably calibrated confidence</b>. No API key. No waitlist.</p>
 
 <p align="center">
+  <a href="https://pypi.org/project/poorjev/"><img src="https://img.shields.io/pypi/v/poorjev" alt="PyPI version"></a>
   <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT license">
   <img src="https://img.shields.io/badge/python-3.10%2B-blue" alt="Python 3.10+">
   <a href="https://github.com/rupeshpoojary9/poorjev/actions/workflows/tests.yml"><img src="https://github.com/rupeshpoojary9/poorjev/actions/workflows/tests.yml/badge.svg" alt="tests"></a>
@@ -27,8 +28,6 @@ Every LLM-in-JSON-mode hands you a confidence score and hopes you don't check it
 ```bash
 pip install "poorjev[local]"
 ```
-
-> PyPI publish is pending. Until then: `pip install "poorjev[local] @ git+https://github.com/rupeshpoojary9/poorjev"`
 
 ```python
 from poorjev import Client, Choice, Score, Noul
