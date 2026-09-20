@@ -135,6 +135,14 @@ def cmd_ask(args) -> int:
     return 0
 
 
+def cmd_serve(args) -> int:
+    from .mcp_server import main as serve_main
+    print("Starting poorjev MCP server (stdio). Add it to your MCP client config.",
+          file=sys.stderr)
+    serve_main(calibrator_path=args.calibrator)
+    return 0
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog="poorjev", description="the poor man's Jev")
     sub = p.add_subparsers(dest="command", required=True)
@@ -162,6 +170,11 @@ def main(argv=None) -> int:
     pc.add_argument("--plot-path", default="docs/reliability_before_after.png")
     pc.add_argument("--out", default="calibration.json")
     pc.set_defaults(func=cmd_calibrate)
+
+    ps = sub.add_parser("serve", help="run the MCP server (for Claude Code etc.)")
+    ps.add_argument("--calibrator", default="calibration.json",
+                    help="calibration.json to apply (fitted temperature)")
+    ps.set_defaults(func=cmd_serve)
 
     args = p.parse_args(argv)
     return args.func(args)

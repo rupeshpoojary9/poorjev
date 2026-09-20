@@ -54,6 +54,40 @@ result["wants_cancel"].value   # True
 
 One call, one model pass, four typed answers. No prompt engineering, no JSON parsing, no "the model returned prose."
 
+## Use it in Claude Code (MCP server)
+
+poorjev ships an MCP server, so a Claude Code (or Claude Desktop) agent can make
+fast, local, calibrated decisions as tools, with no API key and no token cost.
+The obvious use: gate a risky tool call before the agent runs it.
+
+```bash
+pip install "poorjev[local,mcp]"
+claude mcp add poorjev -- poorjev serve
+```
+
+Or add it to `.mcp.json` by hand:
+
+```json
+{
+  "mcpServers": {
+    "poorjev": { "command": "poorjev", "args": ["serve"] }
+  }
+}
+```
+
+The agent then has these local tools:
+
+| Tool | What it does |
+|---|---|
+| `gate(action)` | guardrail: should this action be blocked (moves money, deletes data)? |
+| `judge(text, statement)` | a yes/no question, with calibrated `P(true)` |
+| `classify(text, options)` | pick one option, with calibrated confidence |
+| `rate(text, levels)` | an ordinal score (low / medium / high) |
+| `decide(text, questions)` | several typed questions at once, one pass |
+
+Why this beats asking an LLM to judge: it is local (private), free (no tokens),
+fast, and the confidence is calibrated instead of made up.
+
 ## Why poorjev exists
 
 Most production AI work is not chat. It is fast structured decisions: **route** a ticket, **classify** an intent, **score** a sentiment, **extract** a field, **gate** a tool call. TypeSafe's **Jev** named this category ("System One" models) and nailed the thesis, but Jev is closed, hosted, and behind a waitlist.
@@ -176,6 +210,7 @@ No hype. Here is what this is not.
 - [x] Local NLI backend, single pass, keyless
 - [x] Eval set + metrics (accuracy, ECE, Brier, risk-coverage)
 - [x] Calibration: temperature scaling + conformal abstention
+- [x] MCP server: use poorjev as local tools in Claude Code
 - [ ] Optional LLM backend (the intelligence dial)
 - [ ] `system-one-bench`: a standalone calibration benchmark for the category
 

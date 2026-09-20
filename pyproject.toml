@@ -17,6 +17,7 @@ dependencies = []
 local = ["transformers>=4.40", "torch>=2.2", "sentencepiece>=0.2", "protobuf>=4.0"]
 llm = ["anthropic>=0.40", "openai>=1.40"]
 plots = ["matplotlib>=3.8", "numpy>=1.26"]
+mcp = ["mcp>=1.2"]
 dev = ["pytest>=8.0", "pytest-cov>=5.0"]
 
 [project.scripts]
