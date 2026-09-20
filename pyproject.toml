@@ -4,14 +4,25 @@ build-backend = "hatchling.build"
 
 [project]
 name = "poorjev"
-version = "0.1.0.dev0"
+version = "0.1.0"
 description = "The poor man's Jev: a local-first System One decision layer with provably calibrated confidence."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "Rupesh Poojary" }]
-keywords = ["llm", "classification", "calibration", "system-one", "structured-output", "conformal-prediction"]
+keywords = ["llm", "classification", "calibration", "system-one", "structured-output", "conformal-prediction", "zero-shot", "guardrails", "mcp"]
 dependencies = []
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 
 [project.optional-dependencies]
 local = ["transformers>=4.40", "torch>=2.2", "sentencepiece>=0.2", "protobuf>=4.0"]

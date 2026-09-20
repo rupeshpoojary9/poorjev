@@ -17,7 +17,7 @@
 Every LLM-in-JSON-mode hands you a confidence score and hopes you don't check it. poorjev checks it. On the shipped eval set it cuts calibration error (ECE) from **0.170 to 0.071** with zero loss of accuracy, and it runs on your laptop with no API key.
 
 <p align="center">
-  <img src="docs/reliability_before_after.png" alt="Reliability diagram: raw confidences are overconfident, calibrated confidences hug the diagonal" width="760">
+  <img src="https://raw.githubusercontent.com/rupeshpoojary9/poorjev/main/docs/reliability_before_after.png" alt="Reliability diagram: raw confidences are overconfident, calibrated confidences hug the diagonal" width="760">
 </p>
 
 <p align="center"><i>Left: raw confidences, overconfident. Right: calibrated, a stated 0.8 really is right about 80% of the time.</i></p>
@@ -166,7 +166,7 @@ Temperature is fit by 5-fold cross-validation, so the "after" number is measured
 Set a risk budget and poorjev abstains on its least confident decisions instead of guessing:
 
 <p align="center">
-  <img src="docs/risk_coverage.png" alt="Risk-coverage curve: error rate drops as the model abstains on low-confidence decisions" width="440">
+  <img src="https://raw.githubusercontent.com/rupeshpoojary9/poorjev/main/docs/risk_coverage.png" alt="Risk-coverage curve: error rate drops as the model abstains on low-confidence decisions" width="440">
 </p>
 
 At a 10% error budget it confidently answers 55% of decisions and escalates the rest. That is the natural bridge from System One (fast automatic answer) to System Two (a human, or a bigger model).
