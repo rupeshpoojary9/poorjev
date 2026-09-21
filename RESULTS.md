@@ -79,5 +79,6 @@ Everything above is poorjev graded against itself. For an independently
 measured comparison against Jev, Laya, and von on this same eval set plus a
 public 77-way benchmark (Banking77), see [`crossbench/`](crossbench/) and the
 ["poorjev vs the field"](README.md#poorjev-vs-the-field) table in the main
-README. Short version: poorjev leads the open-source field on accuracy in
-both sets; Jev leads overall.
+README. Short version: poorjev leads the open options on this eval set;
+`von` leads the open options on Banking77 (high-cardinality classification);
+Jev leads overall.
