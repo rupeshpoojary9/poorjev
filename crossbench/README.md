@@ -68,6 +68,10 @@ TYPESAFE_API_KEY=sk-... python banking77_harness.py --system jev
 python typed_decisions_harness.py --system laya
 python typed_decisions_harness.py --system von
 TYPESAFE_API_KEY=sk-... python typed_decisions_harness.py --system jev
+
+# Regenerate the chart in the main README from results/
+pip install matplotlib
+python plot_comparison.py   # writes ../docs/vs_field_benchmark.png
 ```
 
 Jev requires a `TYPESAFE_API_KEY` (paid, ~$0.042/1M input tokens — reproducing

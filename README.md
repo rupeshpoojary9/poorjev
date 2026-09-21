@@ -97,6 +97,12 @@ poorjev exists for the deployments where "call a hosted API" isn't the answer: p
 
 Independently measured, not self-reported — see [`crossbench/`](crossbench/) for the full harness, data, and every raw result file.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/rupeshpoojary9/poorjev/main/docs/vs_field_benchmark.png" alt="Bar chart comparing poorjev, Jev, von, and Laya on accuracy and ECE across Banking77 and the multi-primitive set. Jev leads the multi-primitive set on both metrics; von leads Banking77 accuracy; poorjev leads Banking77 accuracy among open/local options." width="760">
+</p>
+
+<p align="center"><i>poorjev in red. Chart regenerates from <code>crossbench/results/</code> via <code>crossbench/plot_comparison.py</code> — same numbers as the table below.</i></p>
+
 | | **Jev** (TypeSafe) | **von** | **Laya** | **poorjev** |
 |---|---|---|---|---|
 | Interface (typed questions, one pass) | yes | yes | yes | yes |
