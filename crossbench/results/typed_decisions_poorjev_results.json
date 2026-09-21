@@ -1,0 +1,5 @@
+{
+  "raw": {"n": 160, "accuracy": 0.781, "ece": 0.170, "brier": 0.184, "aurc": 0.084},
+  "calibrated_5fold_cv": {"n": 160, "accuracy": 0.781, "ece": 0.071, "temperature_mean": 2.71},
+  "source": "reproduced live via `poorjev eval --set data/poorjev_evalset.jsonl` and `poorjev calibrate`, poorjev v0.1.0"
+}

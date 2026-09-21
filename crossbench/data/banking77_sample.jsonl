@@ -1,0 +1,154 @@
+{"text": "I would like to transfer some money from my other bank account into this one.", "gold": "transfer_into_account"}
+{"text": "Your top-up function isn't working, it still says pending even though I know my card works.", "gold": "pending_top_up"}
+{"text": "How can I find the nearest ATM?", "gold": "atm_support"}
+{"text": "I will need to exchange currencies frequently, will I be able to get a discount?", "gold": "exchange_charge"}
+{"text": "I was supposed to get a purchase refunded but I don't see the money in my account", "gold": "Refund_not_showing_up"}
+{"text": "How long is my Europe transfer wait?", "gold": "transfer_timing"}
+{"text": "The incorrect rate was used in my foreign purchase", "gold": "card_payment_wrong_exchange_rate"}
+{"text": "I tried to top up using my card, but now the money just disappeared!", "gold": "topping_up_by_card"}
+{"text": "I want to know where the funds come from.", "gold": "verify_source_of_funds"}
+{"text": "So the transfer finally worked but now it's been pending for quite a long time. How long do you expect me to wait for it? It's quite urgent", "gold": "pending_transfer"}
+{"text": "I've transferred money before without issue but now I am encountering an error stating that it isn't possible. Why is that?", "gold": "beneficiary_not_allowed"}
+{"text": "From where are you getting your exchange rates?", "gold": "exchange_rate"}
+{"text": "Can you please make my top up go through as soon as possible. I really need the money and it has been pending for an hour already.", "gold": "pending_top_up"}
+{"text": "How do I link to my credit card with you?", "gold": "card_linking"}
+{"text": "Why has my card payment been reverted?", "gold": "reverted_card_payment?"}
+{"text": "Can this app help me exchange currencies?", "gold": "exchange_via_app"}
+{"text": "Why would my top up be cancelled?", "gold": "top_up_reverted"}
+{"text": "My transfer didn't work", "gold": "failed_transfer"}
+{"text": "My card won't work.", "gold": "card_not_working"}
+{"text": "I would like to create a disposable virtual card. How do I go about doing that?", "gold": "get_disposable_virtual_card"}
+{"text": "Contactless isn't working for me", "gold": "contactless_not_working"}
+{"text": "I think my top up did not work", "gold": "top_up_failed"}
+{"text": "How are currencies exchanged?", "gold": "exchange_via_app"}
+{"text": "Why was I charged an extra fee when paying with my card?", "gold": "card_payment_fee_charged"}
+{"text": "Is there a charge for a foreign currency exchange?", "gold": "exchange_charge"}
+{"text": "I am sick of this damn company and want to close out my account.", "gold": "terminate_account"}
+{"text": "How much is the charge to top up my card?", "gold": "top_up_by_card_charge"}
+{"text": "will i be able to open an account for my daughter", "gold": "age_limit"}
+{"text": "What major card payments are accepted?", "gold": "visa_or_mastercard"}
+{"text": "Why was my account charged for using an ATM?", "gold": "cash_withdrawal_charge"}
+{"text": "Where can I get a second card?", "gold": "getting_spare_card"}
+{"text": "I know I didn't make this payment showing up on my card, I don't remember this person at all.", "gold": "card_payment_not_recognised"}
+{"text": "The new card that was just sent to me was declined multiple times yesterday when I tried to use it at a restaurant to pay for my dinner.  I am really disappointed  and embarrassed that my card was denied when I tried to use it to pay for my friend's birthday dinner.", "gold": "declined_card_payment"}
+{"text": "Cash deposit to my account but it has not appeared.", "gold": "balance_not_updated_after_cheque_or_cash_deposit"}
+{"text": "What do i have to do to change my name?", "gold": "edit_personal_details"}
+{"text": "I'm really stuck. I don't know why but my card payment has not gone through.", "gold": "declined_card_payment"}
+{"text": "I had made a transfer but its still pending.", "gold": "pending_transfer"}
+{"text": "What can I use to verify my identify?", "gold": "verify_my_identity"}
+{"text": "What should I do if I think that someone else may be using my card.", "gold": "compromised_card"}
+{"text": "I transferred my funds, why did it not go through?", "gold": "failed_transfer"}
+{"text": "I made a transaction but did it to the wrong account.", "gold": "cancel_transfer"}
+{"text": "I didn't receive the right amount of cash back", "gold": "wrong_amount_of_cash_received"}
+{"text": "Can you freeze my card it was stolen", "gold": "lost_or_stolen_card"}
+{"text": "What cards and currencies do you support?", "gold": "supported_cards_and_currencies"}
+{"text": "Is there a location near me that i can change my PIN?", "gold": "change_pin"}
+{"text": "I would like a refund for something I bought", "gold": "request_refund"}
+{"text": "I need to reorder my virtual card!", "gold": "getting_virtual_card"}
+{"text": "My exchange went wrong. I swapped Russian Ruble for UK pounds and was charged too much.", "gold": "card_payment_wrong_exchange_rate"}
+{"text": "Can I exchange currencies?", "gold": "fiat_currency_support"}
+{"text": "I was double charged", "gold": "transaction_charged_twice"}
+{"text": "I ordered a card a week ago, and it's still not here. What do I do?", "gold": "card_arrival"}
+{"text": "My card's frozen, what can I do?", "gold": "pin_blocked"}
+{"text": "I need help changing my last name on my account.", "gold": "edit_personal_details"}
+{"text": "Do I need to choose GBP to get my salary deposited properly?", "gold": "receiving_money"}
+{"text": "I would appreciate that someone let me know when there is an extra charge for payments. I was checking the app earlier and saying a charge on one of my payments that was additional that no one made me aware of before.", "gold": "card_payment_fee_charged"}
+{"text": "I forgot my code to get into the app.", "gold": "passcode_forgotten"}
+{"text": "How do disposable cards work?", "gold": "get_disposable_virtual_card"}
+{"text": "Is there a limit to top-up amounts?", "gold": "top_up_limits"}
+{"text": "Why did I receive an error message saying that my transfer was not possible?", "gold": "beneficiary_not_allowed"}
+{"text": "Is Apple Pay a possible top up option?", "gold": "apple_pay_or_google_pay"}
+{"text": "I do not have what is required to prove my identity", "gold": "unable_to_verify_identity"}
+{"text": "Which credit or debit cards can I use to top up?", "gold": "supported_cards_and_currencies"}
+{"text": "I think my phone is either lost or stolen.", "gold": "lost_or_stolen_phone"}
+{"text": "What do I do to stop unauthorized transactions on my card? I was never in the place from which the transactions on my bill were made and I never made them. Please help!", "gold": "compromised_card"}
+{"text": "I cannot seem to find my PIN. Where is it?", "gold": "get_physical_card"}
+{"text": "Are you sure when the withdrawal will show?", "gold": "pending_cash_withdrawal"}
+{"text": "I do not wish to verify my identity.", "gold": "why_verify_identity"}
+{"text": "Why would there be a payment on my account I don't recognize?", "gold": "card_payment_not_recognised"}
+{"text": "Will I be charged for a SEPA transfer?", "gold": "top_up_by_bank_transfer_charge"}
+{"text": "Please give me both a visa and a master card.", "gold": "visa_or_mastercard"}
+{"text": "Can you tell me why my refund is not showing in my statement?", "gold": "Refund_not_showing_up"}
+{"text": "Help me with my contactless which isn't working.", "gold": "contactless_not_working"}
+{"text": "I don't like that I have to fill out so much information about my identity.", "gold": "why_verify_identity"}
+{"text": "Can I receive a refund for my item?", "gold": "request_refund"}
+{"text": "I have withdrawn cash from ATM but i received the wrong amount. I want cash back as in app its showing actual amount which i got. Please help me in this.", "gold": "wrong_amount_of_cash_received"}
+{"text": "I need help activating my new card.", "gold": "activate_my_card"}
+{"text": "Do you have a list of countries you operate in?", "gold": "country_support"}
+{"text": "Hi, I was trying to use my card but it was declining by ATM. I have cross checked with two different ATMs but i was facing the same issue. Could you please check my account.", "gold": "declined_cash_withdrawal"}
+{"text": "Where can I find the card PIN?", "gold": "get_physical_card"}
+{"text": "Is my card usable anywhere?", "gold": "card_acceptance"}
+{"text": "Would it be possible to get another card?", "gold": "getting_spare_card"}
+{"text": "Can I get a card outside the UK?", "gold": "country_support"}
+{"text": "Can you please show me where I can find the location to link my card?", "gold": "card_linking"}
+{"text": "I was charged on my account that shouldn't be there.", "gold": "direct_debit_payment_not_recognised"}
+{"text": "why couldn't I get cash in the ATM?", "gold": "declined_cash_withdrawal"}
+{"text": "What is the purpose of the extra fee that is showing up on my statement?", "gold": "extra_charge_on_statement"}
+{"text": "When I got cash, my exchange rate was wrong.", "gold": "wrong_exchange_rate_for_cash_withdrawal"}
+{"text": "My card is about to expire. How do I get a new one?", "gold": "card_about_to_expire"}
+{"text": "I got a extra \u20ac1 fee in my statement", "gold": "extra_charge_on_statement"}
+{"text": "Does this card work everywhere?", "gold": "card_acceptance"}
+{"text": "Are SWIFT transfers accepted?", "gold": "top_up_by_bank_transfer_charge"}
+{"text": "My card stopped working", "gold": "card_not_working"}
+{"text": "How much does it cost to get a new card?  Mine is almost expired.  How fast does it come?", "gold": "card_about_to_expire"}
+{"text": "my phone was taken! can you place cancel my account so no one uses it", "gold": "lost_or_stolen_phone"}
+{"text": "I made a bank transfer a couple of hours ago from my UK account.  It hasn't appeared, can you check to make sure it went through?", "gold": "balance_not_updated_after_bank_transfer"}
+{"text": "Is this where I order a virtual card?", "gold": "getting_virtual_card"}
+{"text": "What can I pay with? Does cash work?", "gold": "top_up_by_cash_or_cheque"}
+{"text": "How do I make my virtual card work?", "gold": "virtual_card_not_working"}
+{"text": "I tried to use my card to top up but all of the money has disappeared.", "gold": "topping_up_by_card"}
+{"text": "The exchange rate you gave me for my cash withdrawal is wrong", "gold": "wrong_exchange_rate_for_cash_withdrawal"}
+{"text": "How do I go about setting up an account for my daughter?", "gold": "age_limit"}
+{"text": "transaction failed?", "gold": "transfer_not_received_by_recipient"}
+{"text": "Do you know the closest ATM?", "gold": "atm_support"}
+{"text": "I see some fees for cash withdraw.", "gold": "cash_withdrawal_charge"}
+{"text": "My transfers are being declined. IT has always worked for me but now it's declining my card. I've tried several times.", "gold": "declined_transfer"}
+{"text": "How do I receive my physical card", "gold": "order_physical_card"}
+{"text": "I have a pending payment from stuff I bought this morning.", "gold": "pending_card_payment"}
+{"text": "How can I verify my indentity?", "gold": "verify_my_identity"}
+{"text": "Hey, I try to make a bank transfer from my UK account a few hours ago, but it haven't show up yet. Please check my account to make sure everything alright with it?", "gold": "balance_not_updated_after_bank_transfer"}
+{"text": "What are the limits for disposable virtual cards?", "gold": "disposable_card_limits"}
+{"text": "How long is the wait for a US transfer?", "gold": "transfer_timing"}
+{"text": "What is the limit to number of transactions I can do with a disposable card?", "gold": "disposable_card_limits"}
+{"text": "What are the benefits to verifying the top-up?", "gold": "verify_top_up"}
+{"text": "I got charged and extra fee when I transferred money so why was I charged?", "gold": "transfer_fee_charged"}
+{"text": "Why isn't my ID being verified?", "gold": "unable_to_verify_identity"}
+{"text": "I didn't make this direct debit transaction", "gold": "direct_debit_payment_not_recognised"}
+{"text": "I have a strange cash withdrawal in my statement", "gold": "cash_withdrawal_not_recognised"}
+{"text": "My card has been swallowed by an ATM", "gold": "card_swallowed"}
+{"text": "I need to change my pin but I am on the road.", "gold": "change_pin"}
+{"text": "I want to cancel a transfer right away! Can you help?", "gold": "cancel_transfer"}
+{"text": "I have paid by my card but payment is still its coming as pending. I think there is some issue please check and let me know when the status will complete.", "gold": "pending_card_payment"}
+{"text": "How can I tell what the limit is to top-ups?", "gold": "top_up_limits"}
+{"text": "Why was I chaged twice for the same thing?", "gold": "transaction_charged_twice"}
+{"text": "My cash deposit from a week ago hasn't shown up. I need the money - how quickly can you sort this out?", "gold": "balance_not_updated_after_cheque_or_cash_deposit"}
+{"text": "How do I make sure I don't run out of money on my card while traveling?", "gold": "automatic_top_up"}
+{"text": "What is the source of my funds.", "gold": "verify_source_of_funds"}
+{"text": "I'm looking for the option to top up by cheque.", "gold": "top_up_by_cash_or_cheque"}
+{"text": "What happens if a merchant doesn't accept a payment?", "gold": "reverted_card_payment?"}
+{"text": "Do you work with all fiat currencies?", "gold": "fiat_currency_support"}
+{"text": "my card was not in the mail again can you advise?", "gold": "card_delivery_estimate"}
+{"text": "The app wouldn't accept my top up.", "gold": "top_up_reverted"}
+{"text": "My American express is experiencing a problem with apple play with top up, can you fix it?", "gold": "apple_pay_or_google_pay"}
+{"text": "How can I get a physical card", "gold": "order_physical_card"}
+{"text": "If my card is trapped in the ATM, what do I do?", "gold": "card_swallowed"}
+{"text": "Why did I get charged for something I bought online? Even though it was international, I thought it would be covered.", "gold": "transfer_fee_charged"}
+{"text": "I attempted to top up but the app denied it.", "gold": "top_up_failed"}
+{"text": "Can you assist me with unblocking my PIN? I put it in wrong too many times.", "gold": "pin_blocked"}
+{"text": "I tried taking money from the ATM but no money came out, but the transaction is still pending? How is this possible?", "gold": "pending_cash_withdrawal"}
+{"text": "When using a US card, what is the cost for a top up/off?", "gold": "top_up_by_card_charge"}
+{"text": "How can I find the top-up verification code?", "gold": "verify_top_up"}
+{"text": "How long does it take for transfers to finish?  I sent funds to my pal, and she says that she has not gotten anything.", "gold": "transfer_not_received_by_recipient"}
+{"text": "I want to use bank transfer for topping up my account. How is it handled?", "gold": "transfer_into_account"}
+{"text": "I tried to buy something online yesterday but it wouldn't stop saying declined. Tried again today but same thing happened. What's Broken?", "gold": "declined_transfer"}
+{"text": "How are you determining your exchange rates?", "gold": "exchange_rate"}
+{"text": "I still have not received my new card, I ordered over a week ago.", "gold": "card_arrival"}
+{"text": "Would like to use my card and need to activate it first.  Can you help me do this?", "gold": "activate_my_card"}
+{"text": "When are cards delivered?", "gold": "card_delivery_estimate"}
+{"text": "I'm tired of all the problems I've had. I want to quit this account!", "gold": "terminate_account"}
+{"text": "My entire gym bag, including my wallet, was stolen out of my locker today. Everything in my wallet is gone - how do I block the card to make it can't be used?", "gold": "lost_or_stolen_card"}
+{"text": "Can I get paid in a different currency?", "gold": "receiving_money"}
+{"text": "How can I fix a problem where my virtual card is rejected?", "gold": "virtual_card_not_working"}
+{"text": "Can I be topped up once I hit a certain balance?", "gold": "automatic_top_up"}
+{"text": "I don't recognise a cash withdrawal", "gold": "cash_withdrawal_not_recognised"}
+{"text": "Can I reset my password?  I don't know what it is.", "gold": "passcode_forgotten"}

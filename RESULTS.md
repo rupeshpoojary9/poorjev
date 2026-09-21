@@ -72,3 +72,12 @@ abstains on the rest (the honest "I don't know, escalate" signal). Full curve:
   target. A per-task or per-question temperature (instead of one global scalar)
   would likely push it lower, and is a natural next step.
 - Same eval set caveats as above: small, single-labeller, support flavoured.
+
+## How this compares to Jev, Laya, and von
+
+Everything above is poorjev graded against itself. For an independently
+measured comparison against Jev, Laya, and von on this same eval set plus a
+public 77-way benchmark (Banking77), see [`crossbench/`](crossbench/) and the
+["poorjev vs the field"](README.md#poorjev-vs-the-field) table in the main
+README. Short version: poorjev leads the open-source field on accuracy in
+both sets; Jev leads overall.

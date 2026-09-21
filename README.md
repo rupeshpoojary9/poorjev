@@ -89,24 +89,38 @@ fast, and the confidence is calibrated instead of made up.
 
 ## Why poorjev exists
 
-Most production AI work is not chat. It is fast structured decisions: **route** a ticket, **classify** an intent, **score** a sentiment, **extract** a field, **gate** a tool call. TypeSafe's **Jev** named this category ("System One" models) and nailed the thesis, but Jev is closed, hosted, and behind a waitlist.
+Most production AI work is not chat. It is fast structured decisions: **route** a ticket, **classify** an intent, **score** a sentiment, **extract** a field, **gate** a tool call. TypeSafe's **Jev** named this category ("System One" models) and nailed the thesis — and, per the independent [cross-system benchmark](crossbench/) below, it currently backs its calibration claims up: it's the strongest model measured here. It's also closed, hosted, and behind a waitlist.
 
-poorjev gives you the same developer interface, locally and openly, and it wins on the one thing that actually matters for routing and gating: **confidence you can trust.** A model that is right 78% of the time but *honest about which 78%* is worth more in production than a smarter model that is silently overconfident.
+poorjev exists for the deployments where "call a hosted API" isn't the answer: private data, offline environments, zero marginal cost, no waitlist. It reproduces Jev's typed-decision interface on a small local model, proves its **own** calibration honestly (5-fold cross-validated, never graded on what it was fit on), and — against the other open local alternatives it's been benchmarked against — is currently the strongest on accuracy in every run so far. It does not beat Jev. That's the honest trade for fully local and free.
 
-## poorjev vs Jev
+## poorjev vs the field
 
-| | **Jev** (TypeSafe) | **poorjev** |
-|---|---|---|
-| Interface (typed questions, one pass) | yes | yes |
-| Calibrated confidence | yes (claimed) | **yes (measured, reproducible)** |
-| Schema-valid output, 0 type errors | yes | **yes, by construction** |
-| Runs locally, no API key | no | **yes** |
-| Your data stays in your environment | no | **yes** |
-| Waitlist / signup | yes | **no** |
-| Open source | no | **yes (MIT)** |
-| Speed | very fast (custom model) | slower, honest about it |
+Independently measured, not self-reported — see [`crossbench/`](crossbench/) for the full harness, data, and every raw result file.
 
-poorjev is not a Jev clone and makes no speed claims. It reproduces the **interface** and the **calibrated-confidence guarantee** on commodity models, and proves the calibration with numbers.
+| | **Jev** (TypeSafe) | **von** | **Laya** | **poorjev** |
+|---|---|---|---|---|
+| Interface (typed questions, one pass) | yes | yes | yes | yes |
+| Runs locally, no API key | no | yes | yes | **yes** |
+| Your data stays in your environment | no | yes | yes | **yes** |
+| Waitlist / signup | yes | no | no | **no** |
+| Open source | no | yes (Apache-2.0) | yes (Apache-2.0) | **yes (MIT)** |
+| Accuracy, Banking77 (77-way, n=154) | 0.812 | **0.838** | 0.519 | 0.656 |
+| ECE, Banking77 (lower better) | **0.084** | 0.135 | 0.388 | 0.414 |
+| Accuracy, multi-primitive set (n=160) | **0.906** | 0.775 | 0.775 | 0.781 |
+| ECE, multi-primitive set (lower better) | **0.045** | 0.108 | 0.215 | 0.071 |
+
+Read straight: Jev wins the multi-primitive set outright, on both metrics. `von`
+beats Jev on Banking77 accuracy but not calibration. poorjev beats every other
+*open, local* option on accuracy in both sets, and has the best calibration of
+the open options on the multi-primitive set — but that edge does not hold at
+Banking77's cardinality, where it's roughly tied with Laya and clearly behind
+Jev and `von`. Nobody sweeps. Full methodology, fairness notes, and every raw
+result file are in [`crossbench/`](crossbench/) — reproducible for a few cents
+of Jev API calls and some CPU time.
+
+poorjev is not a Jev clone and makes no claim to beat it. It reproduces the
+**interface**, proves its own calibration with numbers instead of marketing
+copy, and is the strongest fully local option tested so far.
 
 ## The three primitives
 
@@ -160,6 +174,8 @@ On the shipped eval set (55 hand-labelled items, 160 decisions), local NLI backe
 
 Temperature is fit by 5-fold cross-validation, so the "after" number is measured on held-out data, never on data it was fit on. Full tables and the honest limitations are in [RESULTS.md](RESULTS.md).
 
+**Against Jev, Laya, and von, on the same inputs, same metrics code:** see [poorjev vs the field](#poorjev-vs-the-field) above and the full harness in [`crossbench/`](crossbench/). Short version: poorjev leads the open-source field on accuracy, Jev leads overall.
+
 ## Selective prediction: it knows when it doesn't know
 
 Set a risk budget and poorjev abstains on its least confident decisions instead of guessing:
@@ -188,6 +204,8 @@ No hype. Here is what this is not.
 - **The eval set is small** (tens of items, one labeller, English, support flavoured). Enough to show calibration direction and schema validity, not a leaderboard.
 - **After-ECE is 0.071, not below 0.05.** That is the real cross-validated number, reported as measured. Per-question temperature would likely push it lower.
 - **The local model is moderately intelligent.** It does real semantic entailment, not deep reasoning. Calibration and abstention are what make that safe.
+- **Jev is currently ahead, measured, not assumed.** The [cross-system benchmark](crossbench/) has Jev winning the multi-primitive set on both accuracy and calibration, and leading on Banking77 calibration. poorjev's honest position is "best fully local/free option tested," not "beats Jev."
+- **Temperature scaling doesn't fix everything.** At Banking77's 77-way cardinality, a proper cross-validated temperature refit barely moves ECE (0.414 → 0.416) — the miscalibration there is structural to the small NLI backend at high option counts, not a scalar you can fit away. See [`crossbench/results/banking77_poorjev_recalibrated.json`](crossbench/results/banking77_poorjev_recalibrated.json).
 
 ## FAQ
 
@@ -214,8 +232,9 @@ No hype. Here is what this is not.
 - [x] Eval set + metrics (accuracy, ECE, Brier, risk-coverage)
 - [x] Calibration: temperature scaling + conformal abstention
 - [x] MCP server: use poorjev as local tools in Claude Code
+- [x] Independent cross-system benchmark vs Jev, Laya, von ([`crossbench/`](crossbench/))
 - [ ] Optional LLM backend (the intelligence dial)
-- [ ] `system-one-bench`: a standalone calibration benchmark for the category
+- [ ] Close the Banking77 accuracy/calibration gap to Jev (bigger backend, per-class calibration)
 
 ## Contributing
 
